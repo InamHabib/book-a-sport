@@ -19,7 +19,7 @@ const Home = () =>{
     const onChange = (currentSlide) => {
         console.log(currentSlide);
       };
-      const contentStyle: React.CSSProperties = {
+      const contentStyle = {
         height: '300px',
         width:'-webkit-fill-available'
       };
