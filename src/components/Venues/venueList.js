@@ -1,4 +1,4 @@
-import turf1 from '../../images/turf1.svg';
+import turf1 from '../../images/turf1.png';
 import './venueList.scss';
 const VenueList = () =>{
 
