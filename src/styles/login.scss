@@ -1,0 +1,92 @@
+.book-a-sport-container{
+
+    display: flex;
+    flex-direction: column;
+    background: #F5F5F5;
+    height: 100vh;
+    width: 100%;
+    .header{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        color: #378400;
+        height: 60px;
+        padding: 0.5rem;
+        background: #fff;
+        .left{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 5rem;
+            .location{
+                align-items: center;
+                display: flex;
+                padding-left: 6rem;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                span{
+                    font-size: 18px;
+                    padding-left: 0.5rem;
+                }
+            }
+            img{
+                width: 44px;
+                height: 44px;
+            }
+        }
+        .right{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 50%;
+            padding-right: 3rem;
+            .tab-container{
+                align-items: center;
+                display: flex;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                span{
+                    font-size: 18px;
+                    padding-left: 0.2rem;
+                }
+            }
+        }
+    }
+    .page-container{
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        height: calc(100vh - 60px);
+        .signup-container-width{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    .signup-container{
+        width: 360px;
+        background: #fff;
+        margin-top: 5rem;
+        padding: 2rem;
+        padding-bottom: 0;
+        height: max-content;
+        .logo-container{
+            display: flex;
+            justify-content: center;
+        }
+        .success-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 4rem;
+        }
+    }
+    }
+    // justify-content: center;
+
+}
