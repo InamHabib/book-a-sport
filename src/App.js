@@ -22,12 +22,12 @@ let page = path.split("/").pop();
     <HashRouter >
       <Routes>
 
-          <Route path="login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/cricket" element={<VenueList venueType={'cricket'} /> } />
-          <Route path="/football" element={<VenueList venueType={'football'} />} />
-          <Route path="/venue-detail/:id" element={<VenueDetail />} />
-          <Route path="/book/:id" element={<Book />} />
+          <Route path="book-a-sport/#/login" element={<Login />} />
+          <Route path="book-a-sport/#/home" element={<Home />} />
+          <Route path="book-a-sport/#/cricket" element={<VenueList venueType={'cricket'} /> } />
+          <Route path="book-a-sport/#/football" element={<VenueList venueType={'football'} />} />
+          <Route path="book-a-sport/#/venue-detail/:id" element={<VenueDetail />} />
+          <Route path="book-a-sport/#/book/:id" element={<Book />} />
 
           <Route path="/" element={<Home />}>
         </Route>
