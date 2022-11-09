@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/book-a-sport/static/css/main.3d9e4a92.css",
-    "main.js": "/book-a-sport/static/js/main.caed6443.js",
+    "main.js": "/book-a-sport/static/js/main.b319d2ad.js",
     "static/media/venue.png": "/book-a-sport/static/media/venue.9294e09ebf1c5cb390f2.png",
     "static/media/banner2.png": "/book-a-sport/static/media/banner2.5f4877931bfd9c3233be.png",
     "static/media/banner.png": "/book-a-sport/static/media/banner.dc79aeebce94bf8ff276.png",
@@ -17,10 +17,10 @@
     "static/media/shield.svg": "/book-a-sport/static/media/shield.e9fa89379650cb8fa68b8833df97385a.svg",
     "static/media/home.svg": "/book-a-sport/static/media/home.e0407f65bf2776141d9bef74d53c9625.svg",
     "main.3d9e4a92.css.map": "/book-a-sport/static/css/main.3d9e4a92.css.map",
-    "main.caed6443.js.map": "/book-a-sport/static/js/main.caed6443.js.map"
+    "main.b319d2ad.js.map": "/book-a-sport/static/js/main.b319d2ad.js.map"
   },
   "entrypoints": [
     "static/css/main.3d9e4a92.css",
-    "static/js/main.caed6443.js"
+    "static/js/main.b319d2ad.js"
   ]
 }
