@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/header';
 import VenueList from './components/Venues/venueList';
 import VenueDetail from './components/Venues/venueDetail';
+import Book from './components/booking';
 
 function App() {
   let path = window.location.pathname;
@@ -26,6 +27,8 @@ let page = path.split("/").pop();
           <Route path="/cricket" element={<VenueList venueType={'cricket'} /> } />
           <Route path="/football" element={<VenueList venueType={'football'} />} />
           <Route path="/venue-detail/:id" element={<VenueDetail />} />
+          <Route path="/book/:id" element={<Book />} />
+
           <Route path="/" element={<Home />}>
         </Route>
       </Routes>
