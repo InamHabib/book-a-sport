@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/book-a-sport/static/css/main.3d9e4a92.css",
+    "main.js": "/book-a-sport/static/js/main.89be27bc.js",
+    "static/media/venue.png": "/book-a-sport/static/media/venue.9294e09ebf1c5cb390f2.png",
+    "static/media/banner2.png": "/book-a-sport/static/media/banner2.5f4877931bfd9c3233be.png",
+    "static/media/banner.png": "/book-a-sport/static/media/banner.dc79aeebce94bf8ff276.png",
+    "static/media/turf1.png": "/book-a-sport/static/media/turf1.c1d218e93b8bb682216c.png",
+    "static/media/football.svg": "/book-a-sport/static/media/football.324c73783afaecabe6d4985bdb6d6715.svg",
+    "static/media/cricket.svg": "/book-a-sport/static/media/cricket.1109aaa8350df5394539404e1b2c31a1.svg",
+    "static/media/shopping_cart.svg": "/book-a-sport/static/media/shopping_cart.34a3975d6b5b53011bf17a2d037fe8fc.svg",
+    "index.html": "/book-a-sport/index.html",
+    "static/media/location_pin.svg": "/book-a-sport/static/media/location_pin.9418395d6bf50fde69de20f39e95ba98.svg",
+    "static/media/calendar_today.svg": "/book-a-sport/static/media/calendar_today.70536b1897a9ca273389568aa3b591d1.svg",
+    "static/media/account_circle.svg": "/book-a-sport/static/media/account_circle.53184275f08fc1970c986f3ab9016c62.svg",
+    "static/media/search.svg": "/book-a-sport/static/media/search.5f7193cf7642c2af542eded53790ec80.svg",
+    "static/media/shield.svg": "/book-a-sport/static/media/shield.e9fa89379650cb8fa68b8833df97385a.svg",
+    "static/media/home.svg": "/book-a-sport/static/media/home.e0407f65bf2776141d9bef74d53c9625.svg",
+    "main.3d9e4a92.css.map": "/book-a-sport/static/css/main.3d9e4a92.css.map",
+    "main.89be27bc.js.map": "/book-a-sport/static/js/main.89be27bc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d9e4a92.css",
+    "static/js/main.89be27bc.js"
+  ]
+}
