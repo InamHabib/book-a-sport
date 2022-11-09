@@ -40,7 +40,7 @@ const Home = () =>{
             <div className='category-container'>
 
                 <div className='category-box'>
-                    <img src={cricket} onClick={()=>window.location.replace('/book-a-sport/#/cricket')} />
+                    <img src={cricket} onClick={()=>window.location.replace('/book-a-sport/cricket')} />
                 </div>
                 <div className='category-box'>
                     <img src={football} onClick={()=>window.location.replace('/football')} />
