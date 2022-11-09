@@ -5,7 +5,7 @@ import Login from './components/login';
 import './styles/login.scss';
 import './App.css';
 import Home from './components/home';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter  } from "react-router-dom";
 import Header from './components/header';
 import VenueList from './components/Venues/venueList';
 import VenueDetail from './components/Venues/venueDetail';
@@ -19,7 +19,7 @@ let page = path.split("/").pop();
     {page !== 'login' && <Header />}
     
     <div className='page-container'>
-    <BrowserRouter>
+    <HashRouter >
       <Routes>
 
           <Route path="login" element={<Login />} />
@@ -32,7 +32,7 @@ let page = path.split("/").pop();
           <Route path="/" element={<Home />}>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter >
     </div>
     
    
