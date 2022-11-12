@@ -7,13 +7,14 @@ import Cart from '../images/calendar_today.svg';
 import Account from '../images/account_circle.svg';
 
 const Header = () =>{
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'))
     return(
 <div className='header'>
       <div className='left'>
       <img src={Logo} />
         <div className='location'>
           <img src={LocationImg} />
-          <span>Nagpur, MH</span>
+          <span>{localStorage.getItem('city')}</span>
           </div>
       </div>
       <div className='right'>
@@ -21,7 +22,7 @@ const Header = () =>{
       <img src={Search} />
       <span>Search</span>
     </div>
-    <div className='tab-container'>
+    <div className='tab-container' onClick={()=>window.location.replace('/')}>
       <img src={HomeImg} />
       <span>Home</span>
     </div>
@@ -35,8 +36,10 @@ const Header = () =>{
     </div>
    
     <div className='tab-container'>
-      <img src={Account} />
-      <span>Sign In</span>
+
+      <img src={Account} onClick={()=>window.location.replace('/profile')} />
+      
+      <span>{userInfo.firstName}</span>
     </div>
    
       </div>

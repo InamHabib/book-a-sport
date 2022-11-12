@@ -4,6 +4,7 @@
     .left-section{
         width: 65%;
         display: flex;
+        height: fit-content;
         flex-direction: column;
         background-color: #fff;
         margin: 1rem;
@@ -45,6 +46,7 @@
             display: flex;
             flex-direction: column;
             padding-top: 1rem;
+            border-bottom: 2px solid #378400;
             padding-bottom: 2rem;
             .tag-container{
                 margin-top: 1rem;
@@ -66,6 +68,18 @@
             }
 
         }
+        .booking-slot-container{
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 0;
+            .date-container{
+                display: flex;
+                justify-content: left;
+                gap: 1rem;
+                padding: 1rem 0;
+               
+            }
+        }
 
     }
     .right-section{
@@ -75,6 +89,7 @@
         width: 100%;
         padding: 1rem;
         margin: 1rem;
+        height: fit-content;
         border-radius: 4px;
         .booking-form{
             border: 1px solid #378400;
@@ -88,13 +103,7 @@
                 h4{
                     font-weight: 500;
                 }
-                .date-container{
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 1rem;
-                    padding: 0.5rem 0;
-                   
-                }
+            
             }
         }
         .amount-summary{

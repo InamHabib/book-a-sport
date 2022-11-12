@@ -1,0 +1,79 @@
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background: #fff;
+    height: fit-content;
+    .internal-container{
+        display: flex;
+        flex-direction: row;
+        margin: 2rem 4rem;
+        border: 1px solid #378400;
+        border-radius: 8px;
+        width: 70%;
+        .left-section{
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #378400;
+            width: 30%;
+            height: 100%;
+            padding: 2rem;
+            justify-content: space-between;
+            .top{
+                display: flex;
+                flex-direction: column;
+                h2{
+                    font: bolder;
+                    margin: 0 auto;
+                    margin-top: 1rem;
+                }
+                img{
+                    border-radius: 50%;
+                    object-fit: contain;
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto;
+    
+                }
+            }
+            .bottom{
+                display: flex;
+                flex-direction: column;
+                button{
+                    margin-bottom: 1.5rem;
+                }
+                
+            }
+ 
+
+        }
+        .right-section{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: fit-content;
+            h2{
+                color: #378400;
+                border-bottom: 1px solid #378400;
+                width: 100%;
+                padding: 1rem 0;
+                margin: 0 auto;
+                margin-bottom: 0;
+                text-align: center;
+            }
+            h3{
+                margin-top: 2rem;
+                padding: 0 4rem;
+                font-weight: 600;
+            }
+            .form-container{
+                padding: 2rem;
+                width: 60%;
+                padding-left: 4rem;
+            }
+        }
+    }
+
+
+}
