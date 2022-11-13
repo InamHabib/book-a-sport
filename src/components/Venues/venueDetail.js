@@ -1,7 +1,7 @@
 import venue from '../../images/venue.png';
 import './venueDetail.scss';
 import {Button} from 'antd';
-const VenueDetail = () =>{
+const VenueDetail = (props) =>{
 return(
     <div className='venue-page'>
 <div className="venue-detail-container">
@@ -24,7 +24,7 @@ Shalom Sports Academy
 </h5>
 </div>
 <div className="bottom">
-<Button className='book' onClick={()=>window.location.replace('/book/1')}>
+<Button className='book' onClick={()=>props.history('/book/1')}>
     Book
 </Button>
 <Button className='Bulk'>

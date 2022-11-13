@@ -2,7 +2,7 @@ import '../styles/profile.scss';
 import user from '../images/user.png';
 import { Button, Form, Input, Radio, DatePicker } from 'antd';
 import React, { useEffect, useState } from 'react';
-const Profile = () =>{
+const Profile = (props) =>{
     const [form] = Form.useForm();
     const [register, setRegister] = useState(false);
     const [userInfo, setUserInfo] = useState(JSON.parse(localStorage.getItem('userInfo')));
@@ -25,7 +25,7 @@ const Profile = () =>{
                     <h2>{userInfo.email}</h2>
                 </div>
                 <div className='bottom'>
-                <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} onClick={()=>{localStorage.setItem('loggedIn', false); window.location.replace('/login')}}>Log Out</Button>
+                <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} onClick={()=>{localStorage.setItem('loggedIn', false); props.history('/login')}}>Log Out</Button>
                 </div>
                    
 </div>

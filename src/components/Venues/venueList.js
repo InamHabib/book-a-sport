@@ -1,6 +1,6 @@
 import turf1 from '../../images/turf1.png';
 import './venueList.scss';
-const VenueList = () =>{
+const VenueList = (props) =>{
 
 
 
@@ -9,7 +9,7 @@ const VenueList = () =>{
         for(let i=0; i<10; i++)
         {
             venueArray.push(<div className="venue-box" onClick={()=>{
-                window.location.replace('/venue-detail/1')
+                props.history('/venue-detail/1')
             }}>
             <img src={turf1} />
             <h4>

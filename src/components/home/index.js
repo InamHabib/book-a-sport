@@ -16,7 +16,7 @@ import football from '../../images/football.svg';
 //     textAlign: 'center',
 //     background: '#364d79',
 //   };
-const Home = () =>{
+const Home = (props) =>{
   const [city, setCity] = useState('Nagpur');
   const [isModalOpen, setIsModalOpen] = useState(true);
    
@@ -47,10 +47,10 @@ setIsModalOpen(false);
             <div className='category-container'>
 
                 <div className='category-box'>
-                    <img src={cricket} onClick={()=>window.location.replace('/cricket')} />
+                    <img src={cricket} onClick={()=>props.history('/cricket')} />
                 </div>
                 <div className='category-box'>
-                    <img src={football} onClick={()=>window.location.replace('/football')} />
+                    <img src={football} onClick={()=>props.history('/football')} />
                 </div>
             </div>
             <Modal title="Select City" open={isModalOpen} onOk={selectCity} onCancel={()=>setIsModalOpen(false)}>

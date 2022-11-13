@@ -5,7 +5,7 @@ import { useState } from 'react';
 import {Button, Checkbox, Radio, Tag, DatePicker, TimePicker, Modal } from 'antd';
 const { RangePicker } = DatePicker;
 const dateFormat = 'DD-MM-YYY';
-const Book = () =>{
+const Book = (props) =>{
 
     const [turfSelect, setTurfSelect] = useState(1);
     const [sportType, setSportTpye] = useState([]);
@@ -53,10 +53,10 @@ const Book = () =>{
     const handlePaymentMode = () =>{
         if(paymentMode === 1)
         {
-            window.location.replace('/');
+            props.history('/');
         }
         else{
-            window.location.replace("https://google.com");
+            props.history("https://google.com");
         }
     }
     return(

@@ -3,7 +3,7 @@ import logo from '../images/Logo.png'
 import { Button, Form, Input, Radio, DatePicker, Checkbox, message } from 'antd';
 import success from '../images/success.png';
 import React, { useState } from 'react';
-const Login = () =>{
+const Login = (props) =>{
     const [form] = Form.useForm();
     const [register, setRegister] = useState(false);
     const [signIn, setSignIn] = useState(false)
@@ -13,7 +13,7 @@ const Login = () =>{
       if(values.email === userInfo.email && values.password === userInfo.password)
       {
         localStorage.setItem('loggedIn', true);
-        window.location.replace('/');
+        props.history('/');
       }
 else{
   message.error('Incorrect username or password')
@@ -32,7 +32,7 @@ else{
       onFinish={onFinish}
     >
      <Form.Item label="Email" name="email" rules={[{ required: true }]}>
-        <Input placeholder="User Name" />
+        <Input />
       </Form.Item>
       <Form.Item
         label="Password"

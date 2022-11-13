@@ -3,7 +3,7 @@ import logo from '../images/Logo.png'
 import { Button, Form, Input, Radio, DatePicker, Checkbox } from 'antd';
 import success from '../images/success.png';
 import React, { useState } from 'react';
-const Signup = () =>{
+const Signup = (props) =>{
     const [form] = Form.useForm();
     const { getFieldDecorator } = form;
     const [register, setRegister] = useState(false);
@@ -72,7 +72,7 @@ const Signup = () =>{
       <Form.Item>
         <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} htmlType="submit"       >Create Account</Button>
       </Form.Item>
-    </Form> : <div className='success-container'><img src={success} style={{width:'100px'}} /> <br /> <h3 style={{justifyContent:'center', textAlign:'center', paddingTop:'3rem'}}>Your account has been <br/> successfully created</h3> <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none', marginTop:'5rem', marginBottom:"2rem"}} onClick={()=>{window.location.replace('/')}}>Explore Venues</Button> </div>}
+    </Form> : <div className='success-container'><img src={success} style={{width:'100px'}} /> <br /> <h3 style={{justifyContent:'center', textAlign:'center', paddingTop:'3rem'}}>Your account has been <br/> successfully created</h3> <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none', marginTop:'5rem', marginBottom:"2rem"}} onClick={()=>{props.history('/')}}>Explore Venues</Button> </div>}
    
             </div>
  
