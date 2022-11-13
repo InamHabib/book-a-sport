@@ -72,7 +72,7 @@ const Signup = (props) =>{
       <Form.Item>
         <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} htmlType="submit"       >Create Account</Button>
       </Form.Item>
-    </Form> : <div className='success-container'><img src={success} style={{width:'100px'}} /> <br /> <h3 style={{justifyContent:'center', textAlign:'center', paddingTop:'3rem'}}>Your account has been <br/> successfully created</h3> <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none', marginTop:'5rem', marginBottom:"2rem"}} onClick={()=>{props.history('/')}}>Explore Venues</Button> </div>}
+    </Form> : <div className='success-container'><img src={success} style={{width:'100px'}} /> <br /> <h3 style={{justifyContent:'center', textAlign:'center', paddingTop:'3rem'}}>Your account has been <br/> successfully created</h3> <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none', marginTop:'5rem', marginBottom:"2rem"}} onClick={()=>{window.location.replace('/')}}>Explore Venues</Button> </div>}
    
             </div>
  

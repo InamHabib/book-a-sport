@@ -22,7 +22,7 @@ const Header = (props) =>{
       <img src={Search} />
       <span>Search</span>
     </div>
-    <div className='tab-container' onClick={()=>props.history('/')}>
+    <div className='tab-container' onClick={()=>window.location.replace('/')}>
       <img src={HomeImg} />
       <span>Home</span>
     </div>
@@ -37,7 +37,7 @@ const Header = (props) =>{
    
     <div className='tab-container'>
 
-      <img src={Account} onClick={()=>props.history('/profile')} />
+      <img src={Account} onClick={()=>window.location.replace('/profile')} />
       
       <span>{userInfo && userInfo.firstName}</span>
     </div>

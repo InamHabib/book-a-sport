@@ -13,7 +13,7 @@ const Login = (props) =>{
       if(values.email === userInfo.email && values.password === userInfo.password)
       {
         localStorage.setItem('loggedIn', true);
-        props.history('/');
+        window.location.replace('/');
       }
 else{
   message.error('Incorrect username or password')

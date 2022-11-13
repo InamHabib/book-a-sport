@@ -47,10 +47,10 @@ setIsModalOpen(false);
             <div className='category-container'>
 
                 <div className='category-box'>
-                    <img src={cricket} onClick={()=>props.history('/cricket')} />
+                    <img src={cricket} onClick={()=>window.location.replace('/cricket')} />
                 </div>
                 <div className='category-box'>
-                    <img src={football} onClick={()=>props.history('/football')} />
+                    <img src={football} onClick={()=>window.location.replace('/football')} />
                 </div>
             </div>
             <Modal title="Select City" open={isModalOpen} onOk={selectCity} onCancel={()=>setIsModalOpen(false)}>

@@ -53,10 +53,10 @@ const Book = (props) =>{
     const handlePaymentMode = () =>{
         if(paymentMode === 1)
         {
-            props.history('/');
+            window.location.replace('/');
         }
         else{
-            props.history("https://google.com");
+            window.location.replace("https://google.com");
         }
     }
     return(

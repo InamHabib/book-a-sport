@@ -25,7 +25,7 @@ const Profile = (props) =>{
                     <h2>{userInfo.email}</h2>
                 </div>
                 <div className='bottom'>
-                <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} onClick={()=>{localStorage.setItem('loggedIn', false); props.history('/login')}}>Log Out</Button>
+                <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} onClick={()=>{localStorage.setItem('loggedIn', false); window.location.replace('/login')}}>Log Out</Button>
                 </div>
                    
 </div>

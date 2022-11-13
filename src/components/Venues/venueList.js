@@ -9,7 +9,7 @@ const VenueList = (props) =>{
         for(let i=0; i<10; i++)
         {
             venueArray.push(<div className="venue-box" onClick={()=>{
-                props.history('/venue-detail/1')
+                window.location.replace('/venue-detail/1')
             }}>
             <img src={turf1} />
             <h4>

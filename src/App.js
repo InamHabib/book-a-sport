@@ -4,6 +4,7 @@ import Login from './components/login';
 import './styles/login.scss';
 import './App.css';
 import Home from './components/home';
+import {useHistory} from 'react-router';
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Header from './components/header';
 import VenueList from './components/Venues/venueList';
@@ -16,16 +17,17 @@ import { useEffect } from 'react';
 function App() {
   let path = window.location.pathname;
 let page = path.split("/").pop();
-const history = useNavigate();
+const history = useNavigate;
 useEffect(()=>{
-  if(localStorage.getItem('loggedIn' !== true))
+  console.log(page)
+  if(localStorage.getItem('loggedIn' !== true) || !localStorage.getItem('loggedIn'))
   {
     if( page !== 'signup')
     {
-      history("/login")
+      window.location.replace("/login")
     }
     else{
-      history("/signup")
+      window.location.replace("/signup")
     }
   }
  
