@@ -6,7 +6,7 @@ import Calendar from '../images/shopping_cart.svg';
 import Cart from '../images/calendar_today.svg';
 import Account from '../images/account_circle.svg';
 
-const Header = () =>{
+const Header = (props) =>{
   const userInfo = JSON.parse(localStorage.getItem('userInfo'))
     return(
 <div className='header'>

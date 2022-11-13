@@ -32,7 +32,7 @@ useEffect(()=>{
 },[])
   return (
    <div className='book-a-sport-container'>
-    {page !== 'login' && page !== 'signup' && <Header />}
+    {page !== 'login' && page !== 'signup' && <Header history={history} />}
     
     <div className='page-container'>
     <BrowserRouter>
