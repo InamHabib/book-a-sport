@@ -13,6 +13,7 @@ import Book from './components/booking';
 import Signup from './components/signUp';
 import Profile from './components/profile';
 import { useEffect } from 'react';
+import BookTurf from './components/newBooking';
 
 function App() {
   let path = window.location.pathname;
@@ -20,14 +21,11 @@ let page = path.split("/").pop();
 const history = useNavigate;
 useEffect(()=>{
   console.log(page)
-  if(localStorage.getItem('loggedIn' !== true) || !localStorage.getItem('loggedIn'))
+  if(localStorage.getItem('loggedIn' !== true) || !localStorage.getItem('loggedIn') && page !== 'login')
   {
     if( page !== 'signup')
     {
       window.location.replace("/login")
-    }
-    else{
-      window.location.replace("/signup")
     }
   }
  
@@ -46,6 +44,7 @@ useEffect(()=>{
         <Route path="/football" element={<VenueList venueType={'football'} history={history} />} />
         <Route path="/venue-detail/:id" element={<VenueDetail history={history} />} />
         <Route path="/book/:id" element={<Book history={history} />} />
+        <Route path="/new-book/:id" element={<BookTurf history={history} />} />
 
         <Route path="/" element={<Home history={history} />}>
       </Route>

@@ -1,6 +1,156 @@
 .booking-container{
     display: flex;
     width: 100%;
+    .new-left-section{
+        width: 100%;
+        display: flex;
+        height: fit-content;
+        flex-direction: column;
+        background-color: #fff;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 4px;
+        .turf-details{
+            display: flex;
+           
+            border-bottom: 2px solid #378400;
+            padding-bottom: 2rem;
+            .left{
+                display: flex;
+                width: 50%;
+                img{
+                        object-fit: contain;
+    width: -webkit-fill-available;
+    border-radius: 4px;
+
+                }
+            }
+            .right{
+                display: flex;
+                flex-direction: column;
+                margin-left: 3rem;
+            
+                h1{
+                    margin-bottom: 1rem;
+                }
+            }
+
+        
+        }
+        .payment-container{
+            margin: 0rem 1rem;
+            h2{
+                margin-top: 2rem;
+            }
+            .ant-radio-group{
+                margin-top: 1rem;
+            }
+
+        }
+        .booking-tab-container{
+            margin-top: 1rem;
+            .ant-tabs-tab-btn{
+                color: #378400;
+                span{
+                    color: #378400;
+                }
+            }
+            .next-button-container{
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                .confirm{
+                    background:#378400;
+                    color: #fff;
+                    border-radius: 4px;
+                }
+            }
+            .time-select{
+                display: flex;
+                flex-direction: column;
+                margin: 2rem 5rem;
+                .duration-container{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 4rem;
+                    .hour-container{
+                        margin-right: 2rem;
+                        .ant-input-number{
+                            border: 0.8px solid #378400;
+                            border-radius: 4px;
+                        }
+                        .ant-input-number-group-addon{
+                            background: none;
+                            border: none;
+                            color: #378400;
+                        }
+                        .ant-input-number-input-wrap{
+                           
+                            input{
+                                width: 7rem;
+                                height: 7rem;
+                                text-align: center;
+                                font-size: 1.2em;
+    font-weight: 500;
+    color: #378400;
+                            }
+                           
+                           
+                        }
+                    }
+                    .minute-container{
+                        .ant-input-number{
+                            border: 0.8px solid #378400;
+                            border-radius: 4px;
+                        }
+                        .ant-input-number-group-addon{
+                            border: 0.8px solid #378400;
+                            background: none;
+                            border: none;
+                            color: #378400;
+                        }
+                        .ant-input-number-input-wrap{
+                            
+                            input{
+                                width: 7rem;
+                                height: 7rem;
+                                text-align: center;
+                                font-size: 1.2em;
+    font-weight: 500;
+    color: #378400;
+                            }
+                           
+                           
+                        }
+                    }
+                }
+                .time-box-container{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    padding: 2rem 0rem;
+                    .time-box{
+                       
+                        
+                        .ant-checkbox-wrapper{
+                            padding: 0.5rem;
+                            border: 0.8px solid #378400;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            .ant-checkbox{
+                                display: none;
+                            }
+                        }
+                        .ant-checkbox-wrapper-checked{
+                            background: #378400;
+                            color: #fff;
+                        }
+                    }
+        
+                }
+            }
+        }
+    }
     .left-section{
         width: 65%;
         display: flex;
@@ -35,6 +185,7 @@
                 }
             }
         }
+  
         .sport-selection{
             display: flex;
             flex-direction: column;
@@ -130,3 +281,116 @@
 
     }
 }
+.select-date-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .time-picker-container{
+        display: flex;
+    }
+
+    .SmallCalendar {
+        width: 100%;
+        height: 30rem;
+        display: flex;
+        padding: 1rem 0rem;
+        .fc-col-header-cell-cushion{
+            color: #378400;
+        }
+        .fc-daygrid-day-number{
+            color: #378400;
+        }
+        .fc td,
+        .fc th {
+          border-style: none !important;
+        }
+    
+        .fc-scrollgrid-liquid {
+          border: none;
+        }
+    
+        .fc-theme-standard {
+          border: 1.03296px solid #e5e5e5;
+          box-sizing: border-box;
+          box-shadow: 0px 4.86694px 4.86694px rgba(0, 0, 0, 0.25);
+          border-radius: 4.13183px;
+          min-height: 20rem;
+          padding: 1rem;
+          width: 100%;
+          .fc-day-today{
+            background-color: #fff !important;
+          }
+          .fc-prev-button {
+            background: none !important;
+            color: #000 !important;
+            border: none !important;
+            box-shadow: none !important;
+          }
+    
+          .fc-next-button {
+            background: none !important;
+            color: #000 !important;
+            border: none !important;
+            box-shadow: none !important;
+          }
+    
+          .fc-toolbar-title {
+            font-size: 1em;
+          }
+        }
+    
+        .Scheduled {
+          color: #039be5;
+          background: none;
+          padding: 0.5rem;
+    
+          .fc-event-title {
+            color: #000;
+            font-weight: 600;
+          }
+    
+          .fc-daygrid-event-dot {
+            color: #039be5;
+            border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid
+              var(--fc-event-border-color, #039be5);
+          }
+        }
+    
+        .fc-day-today {
+          background: none;
+    
+          .fc-daygrid-day-number {
+            letter-spacing: -2.5px;
+            text-indent: -2.5px;
+            font-variant: tabular-nums;
+            -webkit-font-feature-settings: "tnum" 1;
+            font-feature-settings: "tnum" 1;
+            background-color: #378400;
+            color: white;
+          }
+        }
+    
+        .fc-daygrid-day-frame {
+          .fc-daygrid-day-top {
+            justify-content: center;
+            align-items: center;
+          }
+    
+          .fc-daygrid-day-number {
+            width: 26px;
+            height: 26px;
+            justify-content: baseline;
+            text-align: center;
+            padding: 0;
+            border-radius: 50%;
+            padding-top: 2px;
+            align-items: center;
+          }
+        }
+      }
+
+}
+
+:root {
+    --timeit-primary-color: #1e90ff;
+  }
