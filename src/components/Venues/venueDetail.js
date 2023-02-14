@@ -1,50 +1,60 @@
 import venue from '../../images/venue.png';
 import './venueDetail.scss';
 import {Button} from 'antd';
+import { useEffect } from 'react';
+import { useState } from 'react';
+
 const VenueDetail = (props) =>{
+    const [venue, setVenues] = useState([]);
+    useEffect(()=>{
+        const search = window.location.search;
+        const params = new URLSearchParams(search); 
+        setVenues(JSON.parse(params.get('venue'))); 
+        console.log(JSON.parse(params.get('venue')));
+    },[])
 return(
     <div className='venue-page'>
 <div className="venue-detail-container">
-    <h4 className="path">
-    Home / India / Nagpur / Shalom Sports Academy
-    </h4>
+
+
     <div className="venue-box">
-        <img src={venue} />
-        <div className="venue-info">
-            <div className="left-section">
+    <img src={venue && venue.images && venue.images[0].thumbnailUrl} />
+    <div className="venue-info">
+        <div className="left-section">
 <div className="top">
 <h4>
-Shalom Sports Academy
+{venue.turfName}
 </h4>
+<h4>Open Hours: &nbsp;&nbsp;&nbsp;Mon - Sun, {venue.startsAt}:00  to {venue.closesOn}:00 </h4>
 <h5>
-    Mankapur, Nagpur &nbsp;&nbsp; | 10km from your location
+{venue.address} | {venue.location}
 </h5>
 <h5>
-    Cricket, Football
+{venue.sportsType}
+</h5>
+<h5 style={{color:'green'}}>
+{venue.price} per hour
 </h5>
 </div>
 <div className="bottom">
-<Button className='book' onClick={()=>window.location.replace('/new-book/1')}>
-    Book
+<Button className='book' onClick={()=>window.location.replace(`/new-book/1?venue=${JSON.stringify(venue)}`)}>
+Book
 </Button>
-<Button className='Bulk'>
-    Bulk Booking 
-</Button>
-<Button className='check'>
-    Check Availability
-</Button>
+
 </div>
+        </div>
+        <div className="right-section">
+            <div className="top">
+
             </div>
-            <div className="right-section">
-                <div className="top">
+            <div className="bottom">
 
-                </div>
-                <div className="bottom">
-
-                </div>
             </div>
         </div>
     </div>
+</div>
+
+
 </div>
     </div>
 

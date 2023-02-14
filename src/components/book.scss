@@ -124,30 +124,7 @@
                         }
                     }
                 }
-                .time-box-container{
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    padding: 2rem 0rem;
-                    .time-box{
-                       
-                        
-                        .ant-checkbox-wrapper{
-                            padding: 0.5rem;
-                            border: 0.8px solid #378400;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            .ant-checkbox{
-                                display: none;
-                            }
-                        }
-                        .ant-checkbox-wrapper-checked{
-                            background: #378400;
-                            color: #fff;
-                        }
-                    }
-        
-                }
+
             }
         }
     }
@@ -283,8 +260,34 @@
 }
 .select-date-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
+    .time-box-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 2rem 0rem;
+        .time-box{
+           
+            
+            .ant-checkbox-wrapper{
+                padding: 0.5rem;
+                border: 0.8px solid #378400;
+                border-radius: 5px;
+                margin-bottom: 0.5rem;
+                cursor: pointer;
+                .ant-checkbox{
+                    display: none;
+                    
+                }
+            }
+            .ant-checkbox-wrapper-checked{
+                background: #378400;
+                color: #fff;
+            }
+        }
+
+    }
     .time-picker-container{
         display: flex;
     }

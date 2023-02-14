@@ -3,6 +3,7 @@ import logo from '../images/Logo.png'
 import { Button, Form, Input, Radio, DatePicker, Checkbox } from 'antd';
 import success from '../images/success.png';
 import React, { useState } from 'react';
+import axios from 'axios';
 const Signup = (props) =>{
     const [form] = Form.useForm();
     const { getFieldDecorator } = form;
@@ -25,16 +26,26 @@ const Signup = (props) =>{
 //     }
     const onFinish = (values) => {
       console.log('Success:', values);
+      let url = `https://9nx6dm8wv5.execute-api.ap-south-1.amazonaws.com/dev/register`;
       let userInfo ={
+        email : values.email,
+        password : values.password,
         firstName : values.firstName,
         lastName : values.lastName,
-        email : values.email,
-        password : values.password
+        dateOfBirth : "17/10/1993"
       }
-      localStorage.setItem('userInfo', JSON.stringify(userInfo));
-      localStorage.setItem('loggedIn', true);
-      setRegister(true);
-      console.log(localStorage.getItem('userInfo'))
+      axios
+        .post(url, userInfo, {
+        headers: {
+           "Content-Type": 'application/json' 
+        }
+      })
+      .then((res) => {
+          console.log('Inam', res.data);
+          let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpZCI6IjJhYjk4MWYwLTUyYTctNGFlYy05NjJlLTg0ZjY4MDk5NGE1NSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjc1MDE0MDgyLCJleHAiOjE2NzUwMTc2ODJ9.IY_uYUj-7u_UHskyJ4TutttWpAqRnewczdWikPFalkk';
+          localStorage.setItem('userInfo',res.data.token);      
+          // window.location.replace('/');
+      })
     };
     return(
       <div className='signup-container-width'>
@@ -43,7 +54,6 @@ const Signup = (props) =>{
                 <img src={logo} />
             </div>
   <div className='form-container'>
-    {register !== true ?
          <Form
       layout='vertical'
       form={form}
@@ -72,7 +82,7 @@ const Signup = (props) =>{
       <Form.Item>
         <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} htmlType="submit"       >Create Account</Button>
       </Form.Item>
-    </Form> : <div className='success-container'><img src={success} style={{width:'100px'}} /> <br /> <h3 style={{justifyContent:'center', textAlign:'center', paddingTop:'3rem'}}>Your account has been <br/> successfully created</h3> <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none', marginTop:'5rem', marginBottom:"2rem"}} onClick={()=>{window.location.replace('/')}}>Explore Venues</Button> </div>}
+    </Form>
    
             </div>
  

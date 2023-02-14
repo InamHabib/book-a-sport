@@ -9,11 +9,13 @@
     }
     .venue-container{
         display: grid;
-        flex-direction: row;
-        justify-content: center;
-        margin: 0 auto;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: auto auto auto;
+
+        padding-left: 4rem;
+
         .venue-box{
+            display: flex;
+            flex-direction: column;
             padding: 1rem;
             border-radius: 8px;
             cursor: pointer;

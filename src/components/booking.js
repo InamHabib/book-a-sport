@@ -1,16 +1,23 @@
 
-import venue from '../images/venue.png';
 import './book.scss';
 import { useState } from 'react';
 import {Button, Checkbox, Radio, Tag, DatePicker, TimePicker, Modal } from 'antd';
+import { useEffect } from 'react';
 const { RangePicker } = DatePicker;
 const dateFormat = 'DD-MM-YYY';
 const Book = (props) =>{
-
+    const [venue, setVenue] = useState();
+    useEffect(()=>{
+        const search = window.location.search;
+        const params = new URLSearchParams(search); 
+        setVenue(JSON.parse(params.get('venue'))); 
+        console.log(JSON.parse(params.get('venue')));
+    })
     const [turfSelect, setTurfSelect] = useState(1);
     const [sportType, setSportTpye] = useState([]);
     const [bookingType, setBookingType] = useState(1);
     const turfSelection = (e) => {
+
        
         let tempSortType = sportType
         if(e.target.value === "cricket")
@@ -60,16 +67,17 @@ const Book = (props) =>{
         }
     }
     return(
-       <div className='booking-container'>
+        <>
+           {venue && <div className='booking-container'>
         <div className='left-section'>
 <div className='turf-details'>
 <div className='left'>
 <img src={venue} />
 </div>
 <div className='right'>
-<h1>Shalom Sports Academy </h1>
-<h4>Open Hours: &nbsp;&nbsp;&nbsp;Mon - Sun, 6:00 AM to 10:00 AM</h4>
-<h4>Address: &nbsp;&nbsp;&nbsp;Mecosabagh Methodist High Ground, Nagpur</h4>
+<h1>{venue.turfName}</h1>
+<h4>Open Hours: &nbsp;&nbsp;&nbsp;Mon - Sun, {venue.startsAt}:00 to {venue.closesOn}:00</h4>
+<h4>Address: &nbsp;&nbsp;&nbsp;{venue.address}</h4>
 </div>
 </div>
 <div className='sport-selection'>
@@ -155,7 +163,9 @@ const Book = (props) =>{
         <Radio value={2}>Pay Now</Radio>
   </Radio.Group>
       </Modal>
-       </div>
+       </div>}
+        </>
+    
     
     )
 }

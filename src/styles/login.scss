@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .book-a-sport-container{
 
     display: flex;
@@ -14,6 +17,9 @@
         height: 60px;
         padding: 0.5rem;
         background: #fff;
+        span{
+            cursor: pointer;
+        }
         .left{
             display: flex;
             flex-direction: row;

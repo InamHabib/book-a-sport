@@ -7,7 +7,7 @@ import Cart from '../images/calendar_today.svg';
 import Account from '../images/account_circle.svg';
 
 const Header = (props) =>{
-  const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+  // const userInfo = JSON.parse(localStorage.getItem('userInfo'))
     return(
 <div className='header'>
       <div className='left'>
@@ -27,19 +27,15 @@ const Header = (props) =>{
       <span>Home</span>
     </div>
     <div className='tab-container'>
-      <img src={Cart} />
-      <span>Cart</span>
-    </div>
-    <div className='tab-container'>
       <img src={Calendar} />
-      <span>Bookings</span>
+      <span onClick={()=>window.location.replace('/booking-history')}>Bookings</span>
     </div>
    
     <div className='tab-container'>
 
       <img src={Account} onClick={()=>window.location.replace('/profile')} />
       
-      <span>{userInfo && userInfo.firstName}</span>
+      {/* <span>{userInfo && userInfo.firstName}</span> */}
     </div>
    
       </div>

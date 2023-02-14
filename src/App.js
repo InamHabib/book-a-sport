@@ -14,14 +14,16 @@ import Signup from './components/signUp';
 import Profile from './components/profile';
 import { useEffect } from 'react';
 import BookTurf from './components/newBooking';
+import BookinHistory from './components/bookingHistory';
 
 function App() {
   let path = window.location.pathname;
 let page = path.split("/").pop();
 const history = useNavigate;
+let userInfo = localStorage.getItem('userInfo')
 useEffect(()=>{
   console.log(page)
-  if(localStorage.getItem('loggedIn' !== true) || !localStorage.getItem('loggedIn') && page !== 'login')
+  if(!userInfo && page !== 'login')
   {
     if( page !== 'signup')
     {
@@ -42,9 +44,10 @@ useEffect(()=>{
         <Route path="/profile" element={<Profile history={history} />} />
         <Route path="/cricket" element={<VenueList venueType={'cricket'} history={history} /> } />
         <Route path="/football" element={<VenueList venueType={'football'} history={history} />} />
-        <Route path="/venue-detail/:id" element={<VenueDetail history={history} />} />
+        <Route path="/venue-detail/" element={<VenueDetail history={history} />} />
         <Route path="/book/:id" element={<Book history={history} />} />
         <Route path="/new-book/:id" element={<BookTurf history={history} />} />
+        <Route path="/booking-history/" element={<BookinHistory history={history} />} />
 
         <Route path="/" element={<Home history={history} />}>
       </Route>
