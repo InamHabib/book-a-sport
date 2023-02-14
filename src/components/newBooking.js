@@ -20,16 +20,18 @@ const BookTurf = (props) =>{
   const token = localStorage.getItem('userInfo')
   const confirmBooking = () =>{
     let url = 'https://9nx6dm8wv5.execute-api.ap-south-1.amazonaws.com/dev/bookSlots';
+    console.log(venue)
    let  data = {
-      createdBy:userInfo.email,
-      turfId: venue.turfId,
-      rate: venue && venue.price,
-      slotsBooked: slots.length,
-      paymentMode: paymentType == 3 ? "offline" : "online",
-      amountPaid: 0,
-      transactionId: "tr123457",
-      slots: slots,
-      bookingDate: selectedDate
+    "createdBy":userInfo.email,
+    "turfId": venue.id,
+    "rate":  venue && venue.price,
+    "slotsBooked": slots.length,
+    "paymentMode":  paymentType == 3 ? "offline" : "online",
+    "amountPaid": 0,
+    "transactionId": "tr1234578",
+    "slots": slots,
+    "bookingDate": selectedDate
+    
     }
     axios
       .post(url, data, {
@@ -64,20 +66,20 @@ const BookTurf = (props) =>{
     }
 
     const morningTimes = [
-        { label: '09:00 AM', value: '1' },
-        { label: '10:00 AM', value: '2' },
-        { label: '11:00 AM', value: '3' },
-        { label: '12:00 PM', value: '4' },
-        { label: '01:00 PM', value: '5' },
-        { label: '02:00 PM', value: '6' },
-        { label: '03:00 PM', value: '7' },
-        { label: '04:00 PM', value: '8' },
-        { label: '05:00 PM', value: '9' },
-        { label: '06:00 PM', value: '10' },
-        { label: '07:00 PM', value: '11' },
-        { label: '08:00 PM', value: '12' },
-        { label: '09:00 PM', value: '13' },
-        { label: '10:00 PM', value: '14' },
+        { label: '09:00 AM', value: 1 },
+        { label: '10:00 AM', value: 2 },
+        { label: '11:00 AM', value: 3 },
+        { label: '12:00 PM', value: 4 },
+        { label: '01:00 PM', value: 5 },
+        { label: '02:00 PM', value: 6 },
+        { label: '03:00 PM', value: 7 },
+        { label: '04:00 PM', value: 8 },
+        { label: '05:00 PM', value: 9 },
+        { label: '06:00 PM', value: 10 },
+        { label: '07:00 PM', value: 11 },
+        { label: '08:00 PM', value: 12 },
+        { label: '09:00 PM', value: 13 },
+        { label: '10:00 PM', value: 14 },
 
       ];
 const selectDate = (selectInfo: DateSelectArg) =>{
