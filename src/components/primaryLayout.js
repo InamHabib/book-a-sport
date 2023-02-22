@@ -1,4 +1,4 @@
-import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuOutlined, DashboardOutlined, MessageOutlined, CalendarOutlined } from '@ant-design/icons';
+import { UploadOutlined, UserOutlined, VideoCameraOutlined, MenuOutlined, DashboardOutlined, MessageOutlined, CalendarOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import MenuItem from 'antd/lib/menu/MenuItem';
 import {React, useEffect, useState} from 'react';
@@ -16,11 +16,13 @@ const PrimaryLayout = (props) => {
     const [userType, setUserType] = useState();
     let userInfo = localStorage.getItem('userInfo');
     let token = localStorage.getItem('userInfo');
-    userInfo = parseJwt(userInfo);
+    userInfo = userInfo && parseJwt(userInfo);
    
     useEffect(()=>{
       let tempUserType;
-      if(userInfo && userInfo.email !== "testvenueowner@gmail.com")
+      if(userInfo)  
+      {  
+         if(userInfo.email != "testvenueowner@gmail.com")
       {
         setUserType("USER")
         tempUserType= "USER"
@@ -29,6 +31,7 @@ const PrimaryLayout = (props) => {
         setUserType("OWNER")
         tempUserType="OWNER"
       }
+    }
       console.log(path)
       if(!token && currentPage !== 'login')
       {
@@ -36,22 +39,23 @@ const PrimaryLayout = (props) => {
         {
           navigate("/login")
         }
+        else{
+          navigate("/signup")
+        }
       }
       // if(userInfo && userInfo.roles &&userInfo.roles.length > 0 && userInfo.roles[0] !== "OWNER")
 
 
         console.log(tempUserType,"hyhy");
-        if((path == "/add-venue" || path == "/manage-booking") && userType=="USER")
-        {
-          console.log('Inam HAbib')
-          
+        if((path == "/add-venue" || path == "/manage-booking" || path == "/manage-venues") && userType=="USER")
+        {          
            navigate(`/home`);
         }
       
-    },[])
+    },[userInfo])
 return(
     <Layout >
-        {userType == "OWNER" ?     <Sider
+        {(userInfo && userInfo.email == "testvenueowner@gmail.com") ?     <Sider
       breakpoint="lg"
       collapsedWidth="0"
       onBreakpoint={(broken) => {
@@ -71,7 +75,7 @@ return(
       >
         <MenuItem style={{marginTop:'0', color:"#fff", background:"#000", height:"4rem"}} >
         <UserOutlined  />
-        <span >{userInfo.firstName}</span>
+        <span >{userInfo && userInfo.firstName}</span>
         </MenuItem>
        
         <MenuItem >
@@ -88,7 +92,11 @@ return(
         </MenuItem>
         <MenuItem >
         <MessageOutlined   />
-        <span >{userInfo.firstName}</span>
+        <span >{userInfo && userInfo.firstName}</span>
+        </MenuItem>
+        <MenuItem onClick={()=>{localStorage.clear(); navigate('/login')}}>
+        <LogoutOutlined />
+        <span >Log Out</span>
         </MenuItem>
        
       </Menu>

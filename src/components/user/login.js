@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Button, Form, Input, Radio, DatePicker, Checkbox, message } from 'antd';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { parseJwt } from '../utils/jwtParse';
 const Login = (props) =>{
   const navigate = useNavigate();
     const [form] = Form.useForm();
@@ -23,9 +24,22 @@ const Login = (props) =>{
       })
       .then((res) => {
           console.log('Inam', res.data);
-          let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpZCI6IjJhYjk4MWYwLTUyYTctNGFlYy05NjJlLTg0ZjY4MDk5NGE1NSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjc1MDE0MDgyLCJleHAiOjE2NzUwMTc2ODJ9.IY_uYUj-7u_UHskyJ4TutttWpAqRnewczdWikPFalkk'
-          localStorage.setItem('userInfo', res.data.token);      
-          navigate('/');
+          if(res.data.status == "SUCCESS")
+          {
+            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpZCI6IjJhYjk4MWYwLTUyYTctNGFlYy05NjJlLTg0ZjY4MDk5NGE1NSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjc1MDE0MDgyLCJleHAiOjE2NzUwMTc2ODJ9.IY_uYUj-7u_UHskyJ4TutttWpAqRnewczdWikPFalkk'
+            localStorage.setItem('userInfo', res.data.token); 
+            console.log()
+            if(res.data && res.data.token && parseJwt(res.data.token).email == "testvenueowner@gmail.com")  {
+              navigate('/manage-venues')
+            }   
+            else{
+              navigate('/home')
+            }
+          }
+          else{
+            message.error("Login Failed")
+          }
+
       })
     };
     return(
@@ -63,7 +77,7 @@ const Login = (props) =>{
       <h4 style={{width:'100%', textAlign:'center', justifyContent:'center'}}>OR</h4>
 
       <Form.Item style={{marginTop:'1rem'}}>
-      <Button type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} htmlType="submit">Continue with Google</Button>
+      <Button onClick={()=>navigate('/signup')} type="primary" style={{background:'#70B527', width:'100%', borderRadius:'5px', border:'none'}} htmlType="submit">Sign Up</Button>
       </Form.Item>
      
     </Form>

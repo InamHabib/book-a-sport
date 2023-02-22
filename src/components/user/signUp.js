@@ -1,6 +1,6 @@
 import './login.scss';
 import logo from '../../images/Logo.png'
-import { Button, Form, Input, Radio, DatePicker, Checkbox } from 'antd';
+import { Button, Form, Input, Radio, DatePicker, Checkbox, message } from 'antd';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -43,8 +43,18 @@ const Signup = (props) =>{
       })
       .then((res) => {
           console.log('Inam', res.data);
-          let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpZCI6IjJhYjk4MWYwLTUyYTctNGFlYy05NjJlLTg0ZjY4MDk5NGE1NSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjc1MDE0MDgyLCJleHAiOjE2NzUwMTc2ODJ9.IY_uYUj-7u_UHskyJ4TutttWpAqRnewczdWikPFalkk';
-          localStorage.setItem('userInfo',res.data.token);      
+          if(res.data.status == "SUCCESS")
+          {
+            let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpZCI6IjJhYjk4MWYwLTUyYTctNGFlYy05NjJlLTg0ZjY4MDk5NGE1NSIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNjc1MDE0MDgyLCJleHAiOjE2NzUwMTc2ODJ9.IY_uYUj-7u_UHskyJ4TutttWpAqRnewczdWikPFalkk';
+            localStorage.setItem('userInfo',res.data.token);
+            navigate("/home")
+
+          }
+          else
+          {
+            message.error("Signup Failed")
+          }
+      
           // navigate('/');
       })
     };
