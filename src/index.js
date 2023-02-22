@@ -29,6 +29,10 @@ const router = createBrowserRouter([
       element: <ManageVenue />,
     },
     {
+      path: "",
+      element: <ManageVenue />,
+    },
+    {
       path: "home",
       element: <Home />,
     },

@@ -47,7 +47,7 @@ const PrimaryLayout = (props) => {
 
 
         console.log(tempUserType,"hyhy");
-        if((path == "/add-venue" || path == "/manage-booking" || path == "/manage-venues") && userType=="USER")
+        if((path == "/add-venue" || path == "/manage-booking" || path == "/manage-venues" || path == "/") && userType=="USER")
         {          
            navigate(`/home`);
         }
