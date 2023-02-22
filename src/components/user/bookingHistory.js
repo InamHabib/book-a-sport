@@ -83,7 +83,7 @@ const BookinHistory = (props) =>{
           dataIndex: 'type',
           render: (_, { tags }) => (
             <>
-              {tags.map((tag) => {
+              {tags && tags.map((tag) => {
                 let color = tag.length > 5 ? 'geekblue' : 'green';
                 if (tag === 'bulk') {
                   color = 'volcano';
