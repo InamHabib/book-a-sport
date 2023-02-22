@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+.signup-container-width{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.signup-container{
+width: 360px;
+background: #fff;
+margin-top: 5rem;
+padding: 2rem;
+padding-bottom: 0;
+height: max-content;
+.logo-container{
+    display: flex;
+    justify-content: center;
+}
+.success-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+}

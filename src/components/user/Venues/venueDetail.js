@@ -1,16 +1,18 @@
-import venue from '../../images/venue.png';
+
 import './venueDetail.scss';
 import {Button} from 'antd';
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import { useNavigate, useLocation } from 'react-router-dom';
 const VenueDetail = (props) =>{
+    const location = useLocation();
+    const navigate = useNavigate();
     const [venue, setVenues] = useState([]);
     useEffect(()=>{
-        const search = window.location.search;
-        const params = new URLSearchParams(search); 
-        setVenues(JSON.parse(params.get('venue'))); 
-        console.log(JSON.parse(params.get('venue')));
+
+        setVenues(location.state.venue); 
+        console.log(location.state.venue);
+
     },[])
 return(
     <div className='venue-page'>
@@ -37,7 +39,7 @@ return(
 </h5>
 </div>
 <div className="bottom">
-<Button className='book' onClick={()=>window.location.replace(`/new-book/1?venue=${JSON.stringify(venue)}`)}>
+<Button className='book' onClick={()=>navigate(`/booking`, {state:{venue}})}>
 Book
 </Button>
 

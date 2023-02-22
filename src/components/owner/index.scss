@@ -1,0 +1,179 @@
+.admin-content{
+    width: 100%;
+    .ant-row{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .admin-header{
+        display: flex;
+        justify-content: space-between;
+        height: 4rem;
+        padding: 0rem 2rem;
+        align-items: center;
+
+        h1{
+            font-size: 2em;
+            margin: 0;
+        }
+
+        border-bottom: 1px solid #ccc;
+    }
+    .admin-body{
+        margin-top: 4rem;
+        padding: 1rem 2rem;
+        .venues{
+            height: 245px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            background: #f7f7f7;
+            padding: 0 !important;
+            cursor: pointer;
+            img{
+                height: 150px;
+                border-radius: 4px;
+            }
+            h4{
+                padding-left: 16px;
+                margin: 0;
+                font-size: 16px;
+                font-weight: 700;
+               
+            }
+            h5{
+                padding-left: 16px;
+                margin: 0;
+                font-size: 16px;
+                color: green;
+                margin-bottom: 16px;
+            }
+            .ant-row{
+                padding-left: 16px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                span{
+                    font-size: 12px;
+                    padding: 0;
+                    margin: 0;
+                    font-weight: 500;
+                }
+            }
+        }
+        .add-venue{
+            background: none;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #000;
+            .add-venue-bottom{
+                display: flex;
+            }
+            .day-box-container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 2rem 0rem;
+                .day-box{
+                   
+                    
+                    .ant-checkbox-wrapper{
+                        padding: 0.5rem;
+                        border: 0.8px solid #378400;
+                        border-radius: 5px;
+                        margin-bottom: 0.5rem;
+                        cursor: pointer;
+                        .ant-checkbox{
+                            display: none;
+                            
+                        }
+                    }
+                    .ant-checkbox-wrapper-checked{
+                        background: #378400;
+                        color: #fff;
+                    }
+                }
+        
+            }
+            svg{
+                font-size: 32px;
+            }
+            h2{
+                font-size: 24px;
+            }
+        }
+    }
+    .manage-booking-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem;
+        height: calc(100vh - 64px);
+        overflow: auto;
+
+    }
+    .create-venue{
+        .ant-form-vertical{
+            width: 100%;
+            padding: 2rem;
+
+            .submit-container{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 21%;
+                button{
+                    background: #378400;
+                    color: #fff;
+                    border-radius: 5px;
+                    border: none;
+                    align-self: flex-end;
+                }
+
+            }
+        }
+        .add-venue-bottom{
+            display: flex;
+            .ant-col{
+                width: 100%;
+                .address{
+                    width: 100%;
+                }
+                .address-container{
+                    .ant-col{
+                        width: 100%;
+                    }
+                }
+            }
+            .ant-upload-select-picture-card{
+                width: 100%;
+                height: 17rem;
+            }
+        }
+        .day-box-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 2rem 0rem;
+            .day-box{
+               
+                
+                .ant-checkbox-wrapper{
+                    padding: 0.5rem;
+                    border: 0.8px solid #378400;
+                    border-radius: 5px;
+                    margin-bottom: 0.5rem;
+                    cursor: pointer;
+                    .ant-checkbox{
+                        display: none;
+                        
+                    }
+                }
+                .ant-checkbox-wrapper-checked{
+                    background: #378400;
+                    color: #fff;
+                }
+            }
+    
+        }
+    }
+}

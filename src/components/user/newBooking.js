@@ -9,12 +9,14 @@ import moment from "moment";
 import axios from 'axios';
 import FieldTimeOutlined  from '@ant-design/icons/FieldTimeOutlined';
 import CalendarOutlined  from '@ant-design/icons/CalendarOutlined';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './book.scss';
-import { parseJwt } from './utils/jwtParse';
+import { parseJwt } from '../utils/jwtParse';
 const { RangePicker } = DatePicker;
 const dateFormat = 'DD-MM-YYY';
 const BookTurf = (props) =>{
-  
+  const location = useLocation();
+  const navigate = useNavigate();
   const [venue, setVenue] = useState();
   const userInfo = parseJwt(localStorage.getItem('userInfo'));
   const token = localStorage.getItem('userInfo')
@@ -41,14 +43,11 @@ const BookTurf = (props) =>{
     })
     .then((res) => {
         message.success('Booking Successful')
-        window.location.replace('/booking-history');
+        navigate('/booking-history');
     })
   }
   useEffect(()=>{
-      const search = window.location.search;
-      const params = new URLSearchParams(search); 
-      setVenue(JSON.parse(params.get('venue'))); 
-      console.log(JSON.parse(params.get('venue')));
+    setVenue(location.state.venue); 
   },[])
     const [tabActiveKey, setActiveKey] = useState(1);
     const [slots, setSlots] = useState([]);

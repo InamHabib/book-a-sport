@@ -1,12 +1,13 @@
-import '../styles/bookingHistory.scss';
+import './bookingHistory.scss';
 import {Button, Row, Tabs, Tab, Table, Space, Tag, message} from 'antd';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import Col from 'antd/es/grid/col';
-import { parseJwt } from './utils/jwtParse';
-
+import { parseJwt } from '../utils/jwtParse';
+import { useNavigate } from 'react-router-dom';
 const BookinHistory = (props) =>{
+  const navigate = useNavigate();
     const [activeKey, setActiveKey] = useState();
     const TabPane = Tabs.TabPane;
     const [venue, setVenues] = useState([]);

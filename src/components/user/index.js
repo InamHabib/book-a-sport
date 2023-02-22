@@ -5,10 +5,10 @@ import banner2 from '../../images/banner2.png'
 import "./index.scss";
 import 'antd/dist/antd.css';
 import {Radio, Modal} from 'antd';
-import barBanner from '../../images/barBanner.png';
+
 import cricket from '../../images/cricket.svg';
 import football from '../../images/football.svg';
-
+import { useNavigate } from 'react-router-dom';
 // const  = {
 //     height: '160px',
 //     color: '#fff',
@@ -17,6 +17,7 @@ import football from '../../images/football.svg';
 //     background: '#364d79',
 //   };
 const Home = (props) =>{
+    const navigate = useNavigate();
   const [city, setCity] = useState('Nagpur');
   const [isModalOpen, setIsModalOpen] = useState(true);
    
@@ -47,10 +48,10 @@ setIsModalOpen(false);
             <div className='category-container'>
 
                 <div className='category-box'>
-                    <img src={cricket} onClick={()=>window.location.replace('/cricket')} />
+                    <img src={cricket} onClick={()=>navigate('/cricket')} />
                 </div>
                 <div className='category-box'>
-                    <img src={football} onClick={()=>window.location.replace('/football')} />
+                    <img src={football} onClick={()=>navigate('/football')} />
                 </div>
             </div>
             <Modal title="Select City" open={isModalOpen} onOk={selectCity} onCancel={()=>setIsModalOpen(false)}>

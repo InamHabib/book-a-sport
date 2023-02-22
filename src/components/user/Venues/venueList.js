@@ -1,12 +1,13 @@
-import turf1 from '../../images/turf1.png';
+
 import './venueList.scss';
 import axios from'axios';
 import { useEffect } from 'react';
-import { parseJwt } from '../utils/jwtParse';
+import { parseJwt } from '../../utils/jwtParse';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const VenueList = (props) =>{
-
-const [venus, setVenues] = useState([]);
+const navigate = useNavigate();
+const [venues, setVenues] = useState([]);
 useEffect(()=>{
 getVenueList();
 console.log("Inam", localStorage.getItem('userInfo'))
@@ -33,9 +34,9 @@ const getVenueList = () =>{
             <h4>Explore venues near you</h4>
             <div className="venue-container">
 
-                {venus && venus.length>0 && venus.map((venue,index)=>(
+                {venues && venues.length>0 && venues.map((venue,index)=>(
                                 <div className="venue-box" onClick={()=>{
-                                    window.location.replace(`/venue-detail/?venue=${JSON.stringify(venue)}`)
+                                    navigate(`/venue-detail`,{state:{venue}})
                                 }}>
                                 <img src={venue.images[0].thumbnailUrl} width="300px" />
                                 <h4>

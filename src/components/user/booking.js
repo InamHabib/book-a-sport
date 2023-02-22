@@ -3,9 +3,11 @@ import './book.scss';
 import { useState } from 'react';
 import {Button, Checkbox, Radio, Tag, DatePicker, TimePicker, Modal } from 'antd';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const { RangePicker } = DatePicker;
 const dateFormat = 'DD-MM-YYY';
 const Book = (props) =>{
+    const navigate = useNavigate();
     const [venue, setVenue] = useState();
     useEffect(()=>{
         const search = window.location.search;
@@ -60,10 +62,10 @@ const Book = (props) =>{
     const handlePaymentMode = () =>{
         if(paymentMode === 1)
         {
-            window.location.replace('/');
+            navigate('/');
         }
         else{
-            window.location.replace("https://google.com");
+            navigate("https://google.com");
         }
     }
     return(
