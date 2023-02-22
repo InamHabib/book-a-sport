@@ -22,7 +22,7 @@ const Header = (props) =>{
       <img src={Search} />
       <span>Search</span>
     </div>
-    <div className='tab-container' onClick={()=>navigate('/')}>
+    <div className='tab-container' onClick={()=>navigate('/home')}>
       <img src={HomeImg} />
       <span>Home</span>
     </div>
